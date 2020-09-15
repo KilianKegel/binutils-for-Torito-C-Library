@@ -5,6 +5,9 @@ Support for [**Torito C Library**](https://github.com/KilianKegel/torito-C-Libra
 
 ## Revision history
 
+### 20200915/2
+memorize **./configure --enable-targets=x86_64-linux,x86_64-pep** in binutils-2.35\README
+
 ### 20200915/1
 add H.J. Lu fix for the R_X86_64_PC32 bug (https://sourceware.org/bugzilla/show_bug.cgi?id=26583)
 from https://gitlab.com/x86-binutils/binutils-gdb/-/tree/8f241fc68b1bd1836be12882cbf5d3ddaae48324

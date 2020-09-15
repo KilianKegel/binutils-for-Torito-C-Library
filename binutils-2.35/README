@@ -17,7 +17,7 @@ run the ``configure'' script here, e.g.:
 
 To install them (by default in /usr/local/bin, /usr/local/lib, etc),
 then do:
-	make install
+	make install --enable-targets=x86_64-linux,x86_64-pep
 
 (If the configure script can't determine your type of computer, give it
 the name as an argument, for instance ``./configure sun4''.  You can
