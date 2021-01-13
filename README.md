@@ -5,6 +5,11 @@ Support for [**Torito C Library**](https://github.com/KilianKegel/torito-C-Libra
 
 ## Revision history
 
+### 20210113
+*Bug 27171 - R_AMD64_DIR64/R_AMD64_DIR32 static address relocation*
+add H.J. Lu fix (https://sourceware.org/bugzilla/attachment.cgi?id=13114&action=edit)
+(https://sourceware.org/bugzilla/show_bug.cgi?id=27171)
+
 ### 20200915/2
 memorize **./configure --enable-targets=x86_64-linux,x86_64-pep** in binutils-2.35\README
 
