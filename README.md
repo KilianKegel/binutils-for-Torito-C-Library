@@ -5,6 +5,9 @@ Support for [**Torito C Library**](https://github.com/KilianKegel/torito-C-Libra
 
 ## Revision history
 
+### 20210216/0
+initial checkin of [**binutils-2.36**](https://ftp.gnu.org/gnu/binutils/binutils-2.36.tar.xz)
+
 ### 20210113
 *Bug 27171 - R_AMD64_DIR64/R_AMD64_DIR32 static address relocation*
 add H.J. Lu fix (https://sourceware.org/bugzilla/attachment.cgi?id=13114&action=edit)
