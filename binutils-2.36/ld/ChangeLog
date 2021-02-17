@@ -1,3 +1,63 @@
+2021-02-06  Nick Clifton  <nickc@redhat.com>
+
+	This is the 2.36.1 release.
+	* configure: Regenerate.
+	* po/ld.pot: Regenerate.
+
+2021-02-04  H.J. Lu  <hongjiu.lu@intel.com>
+
+	PR ld/15146
+	* testsuite/ld-plugin/lto.exp: Run PR ld/15146 tests.
+	* testsuite/ld-plugin/pr15146.d: Restored.
+	* testsuite/ld-plugin/pr15146a.c: Likewise.
+	* testsuite/ld-plugin/pr15146b.c: Likewise.
+	* testsuite/ld-plugin/pr15146c.c: Likewise.
+	* testsuite/ld-plugin/pr15146d.c: Likewise.
+
+2021-02-04  Alan Modra  <amodra@gmail.com>
+
+	* testsuite/ld-plugin/pr27311d.c: New test.
+	* testsuite/ld-plugin/lto.exp: Rename pr27311 to pr27311-1, compile
+	and link new test as pr27311-2.
+
+2021-02-03  Alan Modra  <amodra@gmail.com>
+
+	Apply from mainline
+	2021-02-03  Alan Modra  <amodra@gmail.com>
+	* testsuite/ld-ifunc/ifunc.exp (libpr16467b.so, libpr16467bn.so):
+	Link with --as-needed.
+
+	2021-02-02  Alan Modra  <amodra@gmail.com>
+	* testsuite/ld-plugin/pr27311.d,
+	* testsuite/ld-plugin/pr27311.ver,
+	* testsuite/ld-plugin/pr27311a.c,
+	* testsuite/ld-plugin/pr27311b.c,
+	* testsuite/ld-plugin/pr27311c.c: New testcase.
+	* testsuite/ld-plugin/lto.exp: Run it.  Correct PR14918 and
+	PR12982 entries.
+
+2021-01-28  Alan Modra  <amodra@gmail.com>
+
+	PR 27259
+	* ldelf.c (ldelf_before_place_orphans): Use linker_mark to
+	prevent endless looping of linked-to sections.
+
+2021-01-29  Alan Modra  <amodra@gmail.com>
+
+	* testsuite/ld-tic6x/tic6x.exp: Add pr27271 test.
+
+2021-01-27  Nick Clifton  <nickc@redhat.com>
+
+	Import from mainline:
+	2021-01-25  Fangrui Song  <maskray@google.com>
+
+	PR ld/27230
+	* scripttempl/DWARF.sc: Add DWARF-5 .debug_* sections.
+
+2021-01-24  Nick Clifton  <nickc@redhat.com>
+
+	* configure: Regenerate.
+
 2021-01-24  Nick Clifton  <nickc@redhat.com>
 
 	This is the 2.36 release.

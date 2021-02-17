@@ -5,6 +5,9 @@ Support for [**Torito C Library**](https://github.com/KilianKegel/torito-C-Libra
 
 ## Revision history
 
+### 20210217/0
+initial checkin of [**binutils-2.36.1**](https://ftp.gnu.org/gnu/binutils/binutils-2.36.1.tar.xz)
+
 ### 20210216/0
 initial checkin of [**binutils-2.36**](https://ftp.gnu.org/gnu/binutils/binutils-2.36.tar.xz)
 

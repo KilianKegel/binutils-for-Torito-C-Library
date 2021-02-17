@@ -1,3 +1,42 @@
+2021-02-06  Nick Clifton  <nickc@redhat.com>
+
+	This is the 2.36.1 release.
+	* configure: Regenerate.
+	* po/gas.pot: Regenerate.
+
+2021-02-05  Nelson Chu  <nelson.chu@sifive.com>
+
+	* config/tc-riscv.c (riscv_multi_subset_supports): Removed
+	INSN_CLASS_ZB*.
+	* testsuite/gas/riscv/bitmanip-insns-32.d: Removed.
+	* testsuite/gas/riscv/bitmanip-insns-64.d: Removed.
+	* testsuite/gas/riscv/bitmanip-insns.s: Removed.
+
+2021-01-26  Alan Modra  <amodra@gmail.com>
+
+	PR 27282
+	* testsuite/gas/all/none.d: Replace skip with xfail, don't xfail ft32.
+	* testsuite/gas/elf/pr27228.d: xfail hppa and allow OBJECT match.
+
+2021-01-26  H.J. Lu  <hongjiu.lu@intel.com>
+
+	PR gas/27243
+	* config/tc-nios2.c (md_begin): Don't disable relaxation with
+	--gdwarf-N.
+	* testsuite/gas/nios2/relax.d: New file.
+	* testsuite/gas/nios2/relax.s: Likewise.
+
+2021-01-24  H.J. Lu  <hongjiu.lu@intel.com>
+
+	PR gas/27228
+	* testsuite/gas/elf/elf.exp: Run pr27228.
+	* testsuite/gas/elf/pr27228.d: New file.
+	* testsuite/gas/elf/pr27228.s: Likewise.
+
+2021-01-24  Nick Clifton  <nickc@redhat.com>
+
+	* configure: Regenerate.
+
 2021-01-24  Nick Clifton  <nickc@redhat.com>
 
 	This is the 2.36 release.
