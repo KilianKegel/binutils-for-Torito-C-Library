@@ -13095,8 +13095,8 @@ nds32_elf_get_relocated_section_contents (bfd *abfd,
 	      r = bfd_reloc_ok;
 	    }
 	  else
-	    r = bfd_perform_relocation (input_bfd, *parent, data,
-					input_section,
+	    r = bfd_perform_relocation (input_bfd, link_inf, *parent, 
+                                    data, input_section,
 					relocatable ? abfd : NULL,
 					&error_message);
 

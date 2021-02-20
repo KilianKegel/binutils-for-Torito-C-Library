@@ -81,6 +81,29 @@ ldelf_load_symbols (lang_input_statement_type *entry)
 {
   int link_class = 0;
 
+  if (bfd_link_pde(&link_info)
+      && entry->the_bfd->xvec->flavour == bfd_target_coff_flavour
+      && strcmp(entry->the_bfd->xvec->name, "pe-x86-64") == 0
+      && strcmp(link_info.output_bfd->xvec->name, "elf64-x86-64") == 0)
+  {
+          /* NB: When linking PE/x86-64 inputs to generate ELF executable,
+         create an indirect reference to __executable_start for
+         __ImageBase to support R_AMD64_IMAGEBASE relocation which
+         is relative to __ImageBase.  */
+          struct elf_link_hash_table* htab = elf_hash_table(&link_info);
+          struct elf_link_hash_entry* h, * hi;
+          hi = elf_link_hash_lookup(htab, "__ImageBase", TRUE, FALSE,
+              FALSE);
+          if (hi->root.type == bfd_link_hash_new
+              || hi->type == bfd_link_hash_undefined
+              || hi->type == bfd_link_hash_undefweak)
+          {
+                  h = elf_link_hash_lookup(htab, "__executable_start",
+                      TRUE, FALSE, TRUE);
+                  hi->root.type = bfd_link_hash_indirect;
+                  hi->root.u.i.link = (struct bfd_link_hash_entry*)h;
+          }
+  }
   /* Tell the ELF linker that we don't want the output file to have a
      DT_NEEDED entry for this file, unless it is used to resolve
      references in a regular object.  */

@@ -673,6 +673,7 @@ DESCRIPTION
 
 bfd_reloc_status_type
 bfd_perform_relocation (bfd *abfd,
+            struct bfd_link_info* link_info,
 			arelent *reloc_entry,
 			void *data,
 			asection *input_section,
@@ -928,6 +929,22 @@ space consuming.  For each target:
 				    howto);
 	  relocation -= val & howto->src_mask;
 	}
+      else if (howto->type == R_AMD64_IMAGEBASE)
+      {
+          /* Subtract __ImageBase.  */
+          struct bfd_link_hash_entry* h
+              = bfd_link_hash_lookup(link_info->hash, "__ImageBase",
+                  FALSE, FALSE, FALSE);
+          if (h == NULL)
+              abort();
+          while (h->type == bfd_link_hash_indirect)
+              h = h->u.i.link;
+          /* ELF symbols in relocatable files are section relative,
+             but in nonrelocatable files they are virtual addresses.  */
+          relocation -= (h->u.def.value
+              + h->u.def.section->output_offset
+              + h->u.def.section->output_section->vma);
+      }
     }
 
   /* FIXME: This overflow checking is incomplete, because the value
@@ -8457,6 +8474,7 @@ bfd_generic_get_relocated_section_contents (bfd *abfd,
 	    }
 	  else
 	    r = bfd_perform_relocation (input_bfd,
+                    link_info,
 					*parent,
 					data,
 					input_section,

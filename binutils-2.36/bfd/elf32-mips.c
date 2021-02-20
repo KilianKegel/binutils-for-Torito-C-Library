@@ -1905,7 +1905,7 @@ mips32_64bit_reloc (bfd *abfd, arelent *reloc_entry,
   if (bfd_big_endian (abfd))
     reloc32.address += 4;
   reloc32.howto = &elf_mips_howto_table_rel[R_MIPS_32];
-  r = bfd_perform_relocation (abfd, &reloc32, data, input_section,
+  r = bfd_perform_relocation (abfd, NULL, &reloc32, data, input_section,
 			      output_bfd, error_message);
 
   /* Sign extend into the upper 32 bits.  */

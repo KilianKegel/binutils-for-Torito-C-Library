@@ -13311,7 +13311,10 @@ _bfd_elf_mips_get_relocated_section_contents
 					       input_section, relocatable,
 					       data, gp);
 	  else
-	    r = bfd_perform_relocation (input_bfd, *parent, data,
+	    r = bfd_perform_relocation (input_bfd, 
+                                    link_info, 
+                                    *parent, 
+                                    data,
 					input_section,
 					relocatable ? abfd : NULL,
 					&error_message);

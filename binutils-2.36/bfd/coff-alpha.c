@@ -830,8 +830,8 @@ alpha_ecoff_get_relocated_section_contents (bfd *abfd,
 	      rel->address += input_section->output_offset;
 	      break;
 	    }
-	  r = bfd_perform_relocation (input_bfd, rel, data, input_section,
-				      output_bfd, &err);
+	  r = bfd_perform_relocation (input_bfd, link_info, rel, data,
+                                  input_section, output_bfd, &err);
 	  break;
 
 	case ALPHA_R_GPREL32:
@@ -842,8 +842,8 @@ alpha_ecoff_get_relocated_section_contents (bfd *abfd,
 	     addend.  We adjust the addend and let
 	     bfd_perform_relocation finish the job.  */
 	  rel->addend -= gp;
-	  r = bfd_perform_relocation (input_bfd, rel, data, input_section,
-				      output_bfd, &err);
+	  r = bfd_perform_relocation (input_bfd, link_info, rel, data, 
+                                  input_section, output_bfd, &err);
 	  if (r == bfd_reloc_ok && gp_undefined)
 	    {
 	      r = bfd_reloc_dangerous;
@@ -878,8 +878,8 @@ alpha_ecoff_get_relocated_section_contents (bfd *abfd,
 			|| ((insn >> 26) & 0x3f) == 0x28);
 
 	    rel->addend -= gp;
-	    r = bfd_perform_relocation (input_bfd, rel, data, input_section,
-					output_bfd, &err);
+	    r = bfd_perform_relocation (input_bfd, link_info, rel, data, 
+                                    input_section, output_bfd, &err);
 	    if (r == bfd_reloc_ok && gp_undefined)
 	      {
 		r = bfd_reloc_dangerous;
