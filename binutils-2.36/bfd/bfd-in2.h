@@ -2225,7 +2225,6 @@ bfd_boolean bfd_reloc_offset_in_range
 
 bfd_reloc_status_type bfd_perform_relocation
    (bfd *abfd,
-    struct bfd_link_info* link_info,
     arelent *reloc_entry,
     void *data,
     asection *input_section,
